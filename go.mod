@@ -11,4 +11,8 @@ require (
 	github.com/spf13/pflag v1.0.10
 )
 
-require golang.org/x/sys v0.6.0 // indirect
+require (
+	github.com/tomasen/realip v0.0.0-20180522021738-f0c99a92ddce // indirect
+	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/time v0.13.0 // indirect
+)
