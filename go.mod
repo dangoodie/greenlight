@@ -9,10 +9,9 @@ require (
 	github.com/lmittmann/tint v1.1.2
 	github.com/mattn/go-isatty v0.0.20
 	github.com/spf13/pflag v1.0.10
+	github.com/tomasen/realip v0.0.0-20180522021738-f0c99a92ddce
+	golang.org/x/crypto v0.42.0
+	golang.org/x/time v0.13.0
 )
 
-require (
-	github.com/tomasen/realip v0.0.0-20180522021738-f0c99a92ddce // indirect
-	golang.org/x/sys v0.6.0 // indirect
-	golang.org/x/time v0.13.0 // indirect
-)
+require golang.org/x/sys v0.36.0 // indirect
