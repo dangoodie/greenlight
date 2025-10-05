@@ -14,4 +14,8 @@ require (
 	golang.org/x/time v0.13.0
 )
 
-require golang.org/x/sys v0.36.0 // indirect
+require (
+	github.com/wneessen/go-mail v0.7.2 // indirect
+	golang.org/x/sys v0.36.0 // indirect
+	golang.org/x/text v0.29.0 // indirect
+)
