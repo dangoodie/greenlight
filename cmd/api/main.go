@@ -16,12 +16,15 @@ import (
 	"github.com/dangoodie/greenlight/internal/data"
 	"github.com/dangoodie/greenlight/internal/logging"
 	"github.com/dangoodie/greenlight/internal/mailer"
+	"github.com/dangoodie/greenlight/internal/vcs"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	flag "github.com/spf13/pflag"
 )
 
-const version = "1.0.0"
+var (
+	version = vcs.Version()
+)
 
 type config struct {
 	port int
@@ -95,7 +98,14 @@ func main() {
 		return nil
 	})
 
+	displayVersion := flag.BoolP("version", "v", false, "Display version and exit")
+
 	flag.Parse()
+
+	if *displayVersion {
+		fmt.Printf("Version:\t%s\n", version)
+		os.Exit(0)
+	}
 
 	if cfg.db.dsn == "" {
 		cfg.db.dsn = fmt.Sprintf("postgres://greenlight:%s@localhost/greenlight", db_pass)
